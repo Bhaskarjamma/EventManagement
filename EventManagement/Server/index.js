@@ -1,13 +1,14 @@
 //import express from "express";
 
- const express = require("express");
+const express = require("express");
 const cors = require("cors");
+
 const app = express();
 const PORT = 5000;
 
 const userRoutes = require("./Routes/auth");
-const eventRoutes = require('./Eventcontroller/EventController');
-const connectDB = require("./Db/db");
+const eventRoutes = require("./Routes/eventRoutes");
+const connectDB = require("./db/db");
 
 connectDB();
 
@@ -32,4 +33,3 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
